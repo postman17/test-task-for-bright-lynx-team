@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+</head>
+<body>
+<form action="" class="summary-form">
+    <label for="number-one">Первое число:</label><br>
+    <input type="text" id="number-one"><br>
+    <label for="number-two">Второе число:</label><br>
+    <input type="text" id="number-two"><br>
+    <input type="submit" value="Сложить">
+</form>
+
+<script>
+    // Определяем переменные
+    const number_one = document.querySelector('#number-one').value;
+    const number_two = document.querySelector('#number-two').value;
+    const form = document.querySelector('.summary-form');
+    // Вешаем обработчик события
+    form.addEventListener('submit', (e) => {
+      // Отключаем стандартное поведение формы
+      e.preventDefault();
+      // Проверяем что введены числа
+      if (isNaN(number_one) || isNaN(number_two)) {
+        alert('Введите числа');
+      // Проверка на пустые поля
+      } else if (number_one == '' || number_two == '') {
+        alert('Введите числа');
+      } else {
+        // Выводи сумму
+        alert(parseInt(number_one) + parseInt(number_two));
+      };
+    });
+</script>
+</body>
+</html>
